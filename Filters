@@ -5,8 +5,8 @@ LLDP FITLER -- eth.type == 0x88cc
 CDP Filter -- cdp.version == 2 
 Signs port scanning of tcp -- tcp.flages.syn == 1 
 Signs port scanning of udp -- udp.flags.syn == 1 
-lldp uses mac: 01:80:c2:00:00:0e  
-cdp uses mac: 01:00:0c:cc:cc:cc 
+lldp-- eth.addr== 01:80:c2:00:00:0e  
+cdp-- eth.addr== 01:00:0c:cc:cc:cc 
 Bad TCP Flags without window update -- tcp.analysis.flags && !tcp.analysis.window_update  
 search for multi TCP ports example -- tcp.port in {80,443,8000..8004}   
 exclude some basic chatter !(arp or stp or lldp or cdp or eth.addr==ff:ff:ff:ff:ff:ff)  
