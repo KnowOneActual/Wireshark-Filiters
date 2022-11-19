@@ -11,5 +11,29 @@ Bad TCP Flags without window update -- tcp.analysis.flags && !tcp.analysis.windo
 search for multi TCP ports example -- tcp.port in {80,443,8000..8004}   
 exclude some basic chatter !(arp or stp or lldp or cdp or eth.addr==ff:ff:ff:ff:ff:ff)  
 Slow http times --http.time > 1 
+
+Comparison operators
+eq, ==    Equal
+ne, !=    Not Equal
+gt, >     Greater Than
+lt, <     Less Than
+ge, >=    Greater than or Equal to
+le, <=    Less than or Equal to
+
+eq, any_eq, ==    Any field must be equal
+ne, all_ne, !=    All fields must be not equal
+    all_eq, ===   All fields must be equal
+    any_ne, !==   Any fields must be not equal
+
+match operators
+contains     Does the protocol, field or slice contain a value
+matches, ~   Does the string match the given case-insensitive
+             Perl-compatible regular expression
+
+
+Open another in Mac Terminal open -n /applications/wireshark.app
+
+
+
 https://www.cellstream.com/resources/wireshark-profiles-repository
 https://github.com/amwalding/wireshark_profiles
