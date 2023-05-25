@@ -30,6 +30,8 @@ contains     Does the protocol, field or slice contain a value
 matches, ~   Does the string match the given case-insensitive
              Perl-compatible regular expression
 
+!(dns or arp) exclude infomation from showing 
+
 
 Open another in Mac Terminal open -n /applications/wireshark.app
 
