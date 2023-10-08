@@ -32,6 +32,9 @@ matches, ~   Does the string match the given case-insensitive
 
 !(dns or arp) exclude infomation from showing 
 
+ip.addr == (ip address) -- look up both src and dst traffic for 
+
+
 
 Open another in Mac Terminal open -n /applications/wireshark.app
 
