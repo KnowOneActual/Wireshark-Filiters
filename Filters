@@ -1,4 +1,4 @@
-Work in progess. I'm using this as a data dump as I learn
+Work in progress. I'm using this as a data dump as I learn
 
 
 LLDP FITLER -- eth.type == 0x88cc 
@@ -7,7 +7,7 @@ Signs port scanning of tcp -- tcp.flages.syn == 1
 Signs port scanning of udp -- udp.flags.syn == 1 
 lldp-- eth.addr== 01:80:c2:00:00:0e  
 cdp-- eth.addr== 01:00:0c:cc:cc:cc 
-Bad TCP Flags without window update -- tcp.analysis.flags && !tcp.analysis.window_update  
+Bad TCP Flags without window update -- (tcp.analysis.flags) && !(tcp.analysis.window_update)  
 search for multi TCP ports example -- tcp.port in {80,443,8000..8004}   
 exclude some basic chatter !(arp or stp or lldp or cdp or eth.addr==ff:ff:ff:ff:ff:ff)  
 Slow http times --http.time > 1 
@@ -32,13 +32,23 @@ matches, ~   Does the string match the given case-insensitive
 
 !(dns or arp) exclude infomation from showing 
 
-ip.addr == (ip address) -- look up both src and dst traffic for 
+ip.addr == (ip address) -- lookup both src and dst traffic for specific ip address
 
+ip.addr == 192.168.1.0/24 -- search a subnet 
+
+tcp.port in {80,443,8000..8005} -- search multi ports 
+
+eth matches "London" -- search for a string not cap-sensitive 
+
+!(arp or stp or lldp or cdp or eth.addr==ff:ff:ff:ff:ff:ff or dns or tcp.port in {443,80}) -- filter out some "noise"
+
+dns.time > 0.2 -- show DNS time slower than  0.2
+
+tcp.flags.reset==1 -- tcp reset field 
 
 
 Open another in Mac Terminal open -n /applications/wireshark.app
 
+https://www.wireshark.org/tools/wpa-psk.html
 
 
-https://www.cellstream.com/resources/wireshark-profiles-repository
-https://github.com/amwalding/wireshark_profiles
