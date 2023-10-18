@@ -1,4 +1,4 @@
-Work in progress. I'm using this as a data dump as I learn
+Work in progress. I'm using this as a data dump as I learn.
 
 
 LLDP FITLER -- eth.type == 0x88cc 
@@ -52,3 +52,43 @@ Open another in Mac Terminal open -n /applications/wireshark.app
 https://www.wireshark.org/tools/wpa-psk.html
 
 
+Protocol filters
+
+ip - Displays all IP packets.
+tcp - Displays all TCP packets.
+udp - Displays all UDP packets.
+http - Displays all HTTP packets.
+dns - Displays all DNS packets.
+IP address and port filters
+
+ip.addr == 192.168.1.100 - Displays all IP packets with a source or destination IP address of 192.168.1.100.
+tcp.port == 80 - Displays all TCP packets with a source or destination port of 80 (HTTP).
+udp.port == 53 - Displays all UDP packets with a source or destination port of 53 (DNS).
+Flag filters
+
+tcp.flags.syn == 1 - Displays all TCP packets with the SYN flag set.
+tcp.flags.ack == 1 - Displays all TCP packets with the ACK flag set.
+tcp.flags.psh == 1 - Displays all TCP packets with the PUSH flag set.
+tcp.flags.rst == 1 - Displays all TCP packets with the RST flag set.
+Field filters
+
+http.request.method == "GET" - Displays all HTTP requests with the GET method.
+http.response.code == 200 - Displays all HTTP responses with a status code of 200 (OK).
+dns.qry.name == "example.com" - Displays all DNS queries for the domain name "example.com".
+tcp.payload contains "hello world" - Displays all TCP packets that contain the string "hello world" in the payload.
+Comparison filters
+
+ip.len > 1000 - Displays all IP packets with a length greater than 1000 bytes.
+tcp.seq < 1000000 - Displays all TCP packets with a sequence number less than 1000000.
+udp.srcport == udp.dstport - Displays all UDP packets where the source port is equal to the destination port.
+Logical operators
+
+&& - AND operator.
+|| - OR operator.
+! - NOT operator.
+Parentheses
+
+Parentheses can be used to group filter expressions. For example, the following filter will display all TCP SYN packets to or from the IP address 192.168.1.100:
+
+(tcp.flags.syn == 1) && (ip.addr == 192.168.1.100)
+You can use these filters and combine them in various ways to create complex filters that allow you to isolate specific types of traffic. For more information on Wireshark filters, please see the Wireshark Display Filter Reference: https://www.wireshark.org/docs/dfref/.
