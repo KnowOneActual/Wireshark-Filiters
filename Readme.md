@@ -1,5 +1,8 @@
-![Wireshark Logo](assets/wireshark-Logo.webp)
+ <p align="center">
+  <img src="assets/wireshark_Logo.webp" alt="alt text" width="500">
+</p>
 
+![Wireshark Logo](assets/wireshark_Logo.webp)
 # Wireshark Display Filters
 
 This repository is a collection of useful Wireshark display filters to help you navigate the vast amounts of network traffic generated.
