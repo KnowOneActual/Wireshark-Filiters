@@ -1,3 +1,5 @@
+
+
 # Wireshark Display Filters
 
 This repository is a collection of useful Wireshark display filters to help you navigate the vast amounts of network traffic generated.
@@ -5,7 +7,7 @@ This repository is a collection of useful Wireshark display filters to help you 
 A Wireshark filter is a rule used to select specific packets for display in the Wireshark packet capture window. You can use filters to narrow down traffic based on IP address, port number, protocol, and many other properties. This is an essential skill for anyone involved in network troubleshooting, analysis, or security.
 
 Wireshark filters are written in a special language and can be entered directly into the filter bar at the top of the Wireshark window. Let's dive in and make your packet analysis more efficient! 
-assets/wireshark_filter_bar.webp ![Wireshark Fitler Bar](assets/wireshark_filter_bar.webp)
+![Wireshark Fitler Bar](assets/wireshark_filter_bar.webp)
 
 ## The Filters
 
